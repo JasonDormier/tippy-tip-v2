@@ -1,10 +1,17 @@
+h2{
+    margin-bottom:10px;
+}
 .tipButtons{
     display:flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .custom{
-    width: 0px;
-    font-size: 1.5em;
+    width: 0;
+    /* font-size: 1.5em; */
+    margin:2.5px;
     text-align: center;
+    height: 50px;
+    flex-basis: 48%;
 }

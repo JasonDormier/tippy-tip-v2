@@ -23,14 +23,14 @@ const UserInput = (props) => {
                 <Button>15%</Button>
                 <Button>25%</Button>
                 <Button>50%</Button>
+                <Input
+                    id='custom'
+                    type='number'
+                    min='0'
+                    placeholder='custom'
+                    className={classes.custom}
+                />
             </div>
-            <Input
-                id='custom'
-                type='number'
-                min='0'
-                placeholder='custom'
-                className='custom'
-            />
 
             <Input
                 id='people'

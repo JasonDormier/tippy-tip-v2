@@ -4,7 +4,8 @@ import classes from './Header.module.css';
 const Header = () => {
 
     return(
-        <h1>Tippy Tip</h1>
+        <h1>Tippy <br/>
+        Tip</h1>
     );
 };
 
