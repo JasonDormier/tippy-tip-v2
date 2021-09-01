@@ -1,0 +1,33 @@
+.output{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #ECFEAA;
+    background-color: #626267;
+}
+
+.output em{
+    font-size: 1.2em;
+}
+
+.output span{
+    margin:5px;
+}
+
+.totals{
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+.reset{
+    background-color: #E2DE84;
+    color: #626267;
+}
+
+.reset:hover,
+.reset:active{
+    background-color: #ECFEAA;
+}

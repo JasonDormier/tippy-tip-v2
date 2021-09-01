@@ -1,0 +1,36 @@
+label, input{
+    display: block;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
+input{
+    color: #626267;
+    background-color: #E2DE84;
+    border:2px solid #A6A670;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.5em;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 0.75rem;
+}
+
+input:focus{
+    outline:none;
+    background: #ECFEAA;
+    border-color: #A6A670;;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button { margin-left: 20px; }
+
+.invalid input{
+    border-color: red;
+    background: #FBDADA;
+}
