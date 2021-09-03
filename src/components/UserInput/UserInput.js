@@ -5,55 +5,55 @@ import classes from './UserInput.module.css';
 
 const UserInput = (props) => {
 
-    const [tipPrecentage, setTipPrecentage] = useState(.1);
-    const [billInput, setBillInput] = useState(0);
-    const [people, setPeople] = useState(1);
+    const [tipPercentage, setTipPercentage] = useState(props.passData.tip);
+    const [billInput, setBillInput] = useState(props.passData.bill);
+    const [people, setPeople] = useState(props.passData.people);
+
+    const [customInputVal, setCustomInputVal] = useState('');
 
     const onChangeHandler = event => {
         event.preventDefault();
-        if(event.target.id === 'bill'){
-            setBillInput(event.currentTarget.value);
+        if (event.target.id === 'bill') {
+            setBillInput((Math.round(event.currentTarget.value * 100) / 100).toFixed(2));
         }
-        if(event.target.id === 'people'){
+        if (event.target.id === 'people') {
             setPeople(event.currentTarget.value);
         }
-        if(event.target.id === 'custom'){
-
-
-            setTipPrecentage(event.currentTarget.value / 100);
+        if (event.target.id === 'custom') {
+            setCustomInputVal(event.currentTarget.value);
+            setTipPercentage(event.currentTarget.value / 100);
         }
     };
-
+    
     const onClickHandler = event => {
         event.preventDefault();
-        //const clickedButtonValue = event.currentTarget.value;
-        setTipPrecentage(event.target.value);
+        setTipPercentage(event.target.value);
+        setCustomInputVal('');
     };
 
     useEffect(() => {
 
-        console.log('bill amount: ', billInput);
-        console.log('tip: ', tipPrecentage);
-        console.log('people: ', people);
-        props.onInputData({
+        props.inputData({
             bill: billInput,
-            tip: tipPrecentage,
-            people: people
+            people: people,
+            tip: tipPercentage
         });
-    }, [billInput, tipPrecentage, people]);
+
+
+
+    }, [billInput, tipPercentage, people]);
 
     return (
         <>
-            {/* <input value={billInput} onChange={onChangeHandler}/> */}
             <Input
                 id='bill'
                 label='Bill'
                 type='number'
-                step='0.01'
-                placeholder='0.00'
+                //step='0.01'
+                //placeholder='0.00'
                 min='0.00'
                 max='9999.99'
-                value={billInput}
+                value={props.passData.bill}
                 onChange={onChangeHandler}
             />
 
@@ -63,15 +63,17 @@ const UserInput = (props) => {
                 <Button value={.1} onClick={onClickHandler}>10%</Button>
                 <Button value={.15} onClick={onClickHandler}>15%</Button>
                 <Button value={.25} onClick={onClickHandler}>25%</Button>
-                <Button value={.5}onClick={onClickHandler}>50%</Button>
+                <Button value={.5} onClick={onClickHandler}>50%</Button>
                 <Input
                     className={classes.custom}
                     id='custom'
                     type='number'
                     min='0'
+                    value={customInputVal}
                     placeholder='custom'
                     onChange={onChangeHandler}
-                    />
+                />
+
             </div>
 
             <Input
@@ -82,6 +84,7 @@ const UserInput = (props) => {
                 step='1'
                 min='1'
                 max='100'
+                value={props.passData.people}
                 onChange={onChangeHandler}
             />
 
