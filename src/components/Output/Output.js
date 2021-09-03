@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import classes from './Output.module.css';
 
 
 const Output = (props) => {
+
+    useEffect(() => {
+        console.log(props.passInputData);
+    });
 
     return (
         <>
