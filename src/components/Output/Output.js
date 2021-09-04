@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import classes from './Output.module.css';
@@ -28,18 +28,6 @@ const Output = (props) => {
         return (Math.round((bill / people) * 100) / 100).toFixed(2);
     }
 
-    // const resetHandler = event => {
-    //     event.preventDefault();
-    //     console.log('this fired');
-    //     props.outPutData({
-    //         bill: (Math.round(0 * 100) / 100).toFixed(2),
-    //         people: 1,
-    //         tip: .1
-    //     });
-    // }
-
-    //props.reset();
-
     return (
         <>
             <Card className={classes.output}>
@@ -49,7 +37,7 @@ const Output = (props) => {
                 <span> <em>Total</em> <br />
                     / person</span>
                 <span className={classes.totals}>${billPerPerson()}</span>
-                <Button className={classes.reset} onClick={props.reset}>Reset</Button>
+                <Button id='resetButton' className={classes.reset} onClick={props.reset}>Reset</Button>
             </Card>
         </>
     );

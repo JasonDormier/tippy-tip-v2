@@ -10,10 +10,6 @@ const zero = (Math.round(0 * 100) / 100).toFixed(2);
 
 const App = () => {
 
-  // const [bill, setBill] = useState(zero);
-  // const [people, setPeople] = useState(1);
-  // const [tip, setTip] = useState(.1);
-
   const [data, setData] = useState({
     bill: zero,
     people: 1,
@@ -21,10 +17,12 @@ const App = () => {
   });
 
   const dataHandler = (inputData) => {
-    setData(() => {
-      return inputData;
-    });
-  }
+    // setData(() => {
+    //   return inputData;
+    // });
+    setData(inputData);
+  };
+
   const resetHandler = event => {
     event.preventDefault();
     console.log('this fired');
@@ -33,12 +31,11 @@ const App = () => {
       people: 1,
       tip: .1
     });
-    return data;
-  }
+  };
 
   useEffect(() => {
     console.log('Data inside App: ', data);
-  }, [data])
+  }, [data]);
 
   return (
     <>
@@ -47,7 +44,6 @@ const App = () => {
         <UserInput
           inputData={dataHandler}
           passData={data}
-          reset={resetHandler}
         />
         <Output
           passData={data}
@@ -57,6 +53,6 @@ const App = () => {
       </Card>
     </>
   );
-}
+};
 
 export default App;
