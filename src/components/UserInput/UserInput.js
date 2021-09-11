@@ -7,17 +7,13 @@ const UserInput = (props) => {
 
     const [customInputVal, setCustomInputVal] = useState('');
 
-    //add an onFocus that clears the text feild
-
     const onChangeHandler = event => {
         event.preventDefault();
 
         if (event.target.id === 'bill') {
             props.inputBill({ value: event.currentTarget.value });
         }
-        // if (event.target.id === 'people') {
-        //     props.inputPeople({ value: event.currentTarget.value });
-        // }
+
         if (event.target.id === 'custom') {
             setCustomInputVal(event.currentTarget.value);
             props.inputTip({ value: event.currentTarget.value / 100 });
