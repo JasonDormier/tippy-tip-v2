@@ -7,22 +7,27 @@ label{
 }
 
 input{
-    color: #626267;
-    background-color: #E2DE84;
-    border:2px solid #A6A670;
+    color: #474350;
+    background-color: #FECDAA;
+    border:2px solid #e5b593;
     border-radius: 5px;
     outline: none;
     font-size: 1.5em;
     text-align: right;
     margin-bottom: 20px;
-    padding: 0.75rem;
-    /* direction: RTL; */
+    padding: 0.50rem;
+    pointer-events: auto !important;
 }
 
 input:focus{
     outline:none;
-    background: #ECFEAA;
-    border-color: #A6A670;;
+    background: #ffdfc7;
+    border-color: #e6c7b0;
+}
+
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
 }
 
 /* Chrome, Safari, Edge, Opera */

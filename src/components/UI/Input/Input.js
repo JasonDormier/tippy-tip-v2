@@ -15,6 +15,8 @@ const Input = props => {
                 step={props.steps}
                 placeholder={props.placeholder}
                 onChange={props.onChange}
+                pattern="[0-9]"
+                disabled = {props.disabled}
             />
         </>
     );

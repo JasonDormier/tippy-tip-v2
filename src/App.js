@@ -1,53 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Card from './components/UI/Card/Card';
 import UserInput from './components/UserInput/UserInput';
 import Output from './components/Output/Output';
+import ReactGA from 'react-ga';
 
 import classes from './App.module.css';
 
-const zero = (Math.round(0 * 100) / 100).toFixed(2);
+//figure out how to handle the key board pop up on the phone.
+const TRACKING_ID = "G-1DJNQFET53"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
 
-  const [data, setData] = useState({
-    bill: zero,
-    people: 1,
-    tip: .1,
-  });
+  const [bill, setBill] = useState({value: ''});
+  const [tip, setTip] = useState({value: .1});
+  const [people, setPeople] = useState({value: 1});
 
-  const dataHandler = (inputData) => {
-    // setData(() => {
-    //   return inputData;
-    // });
-    setData(inputData);
-  };
+  const billHandler = billInput => {
+    setBill(billInput)
+  }
+  
+  const tipHandler = tipInput => {
+    setTip(tipInput)
+  }
+
+  const peopleHandler = peopleInput => {
+    setPeople(peopleInput)
+  }
+
 
   const resetHandler = event => {
     event.preventDefault();
-    console.log('this fired');
-    setData({
-      bill: (Math.round(0 * 100) / 100).toFixed(2),
-      people: 1,
-      tip: .1
-    });
+    setBill({value: ''});
+    setPeople({value: 1});
+    setTip({value: .1});
   };
-
-  useEffect(() => {
-    console.log('Data inside App: ', data);
-  }, [data]);
 
   return (
     <>
       <Header />
       <Card className={classes.layout}>
         <UserInput
-          inputData={dataHandler}
-          passData={data}
+          inputBill={billHandler}
+          inputPeople={peopleHandler}
+          inputTip={tipHandler}
+          passBill={bill}
+          passTip={tip}
+          passPeople={people}
         />
         <Output
-          passData={data}
-          outPutData={dataHandler}
+          passBill={bill}
+          passTip={tip}
+          passPeople={people}
           reset={resetHandler}
         />
       </Card>

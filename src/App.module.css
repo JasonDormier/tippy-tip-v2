@@ -7,6 +7,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 body{
@@ -14,30 +15,17 @@ body{
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-color: #E2DE84;
+  background-color: #ffdfc7;
+  overflow: hidden;
 }
 
 .layout{
+  color: #474350;
   width:350px;
   display: flex;
   flex-flow: column;
-  background-color: #f5fcdc;
+  background-color: #FCFFEB;
   padding: 40px;
   border-radius: 20px;
 }
 
-color pallete one{
-  color: #D9E1EF;
-  color: #FFCB6E;
-  color: #FDA53A;
-  color: #F27405;
-  color: #8E4715;
-} 
-
-color pallete two{
-  color: #ECFEAA;
-  color: #E2DE84;
-  color: #A6A670;
-  color: #86836D;
-  color: #626267;
-} 

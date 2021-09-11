@@ -7,12 +7,37 @@ h2{
     margin-bottom: 20px;
 }
 
+.tipButton{
+    height: 40px;
+    flex-basis: 48%;
+}
+
 .custom{
     width: 0;
-    /* font-size: 1.5em; */
     margin:2.5px;
     text-align: center;
-    height: 50px;
+    height: 40px;
     flex-basis: 48%;
-    
+}
+.peopleContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom:10px;
+}
+.people{
+    margin-top:0px;
+    height: 48px;
+    flex-basis: 31%;
+}
+
+.peopleInput{
+    width: 0px;
+    margin-right:2.5px;
+    flex-basis: 31%;
+}
+
+.peopleContainer label{
+    width: 100%;
+    margin-bottom:10px;
 }

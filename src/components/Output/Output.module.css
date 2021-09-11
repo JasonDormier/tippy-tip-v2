@@ -5,8 +5,8 @@
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #ECFEAA;
-    background-color: #626267;
+    color: #FECDAA;
+    background-color: #474350;
 }
 
 .output em{
@@ -24,11 +24,12 @@
 
 .reset{
     padding: 0.75rem 2.5rem;
-    background-color: #E2DE84;
-    color: #626267;
+    background-color: #FECDAA;
+    color: #474350;
 }
 
 .reset:hover,
 .reset:active{
-    background-color: #ECFEAA;
+    color: #474350;
+    background-color: #ffdfc7;
 }
